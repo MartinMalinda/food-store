@@ -12,6 +12,16 @@ const sumBy = function(prop){
 
 export default Ember.Controller.extend({
   categories: ['', 'Vegetables', 'Dairy', 'Meat', 'Fruits'],
+  recipes: [{
+    name: 'Goulash',
+    ingredients: ['Onions', 'Flour - Wheat - Fine', 'Meat - Beef']
+  },{
+    name: 'Leco',
+    ingredients: ['Eggs', 'Sunflower Oil', 'Tomatoes', 'Bell Peppers']
+  },{
+    name: 'Chinese',
+    ingredients: ['Meat - Beef', 'Rice', 'Bell Peppers']
+  }],
   selectedItems: [],
 
   selectedWeight: sumBy('weight'),
