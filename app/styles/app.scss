@@ -1,0 +1,28 @@
+@import "ember-power-select";
+
+main {
+  padding-top: 50px;
+}
+
+.ember-power-select-trigger {
+  max-width: 200px;
+}
+
+.items {
+    
+  display: flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+
+  .food-item {
+    flex-basis: 250px;
+    margin: 5px !important;
+    cursor: pointer;
+  }
+
+  small {
+    font-size: 70%;
+    display: inline-block;
+    margin-left: 5px;
+  }
+}

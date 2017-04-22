@@ -1,0 +1,72 @@
+{{outlet}}
+
+
+<div class="ui container">
+  <div class="ui segment {{unless selectedItems.legth "hidden"}}">
+    <div class="ui two column stackable grid">
+      <div class="ui three wide column">
+        <i class="massive icon cart"></i>
+      </div>
+      <div class="thirteen wide column">
+        <div class="ui statistics">
+          <div class="statistic">
+            <div class="value">
+              {{liquid-bind selectedWeight use="to-up" duration="100"}}
+            </div>
+            <div class="label">
+              Kg
+            </div>
+          </div>
+          <div class="statistic">
+            <div class="value">
+              {{liquid-bind selectedCalories use="to-up" duration="100"}}
+            </div>
+            <div class="label">
+              calories
+            </div>
+          </div>
+          <div class="statistic">
+            <div class="value">
+              {{liquid-bind selectedPortions use="to-up" duration="100"}}
+            </div>
+            <div class="label">
+              portions
+            </div>
+          </div>
+        </div>          
+      </div>
+    </div>
+  </div>
+  <div class="ui two column stackable grid">
+    <div class="column">
+      <strong>Categories</strong> <br>
+      {{#power-select
+        selected=filterByValue
+        options=categories
+        onchange=(action (mut filterByValue))
+        as |name|
+      }}
+        {{name}}
+      {{/power-select}}
+    </div>
+    <div class="column">
+      <strong>Recipes</strong> <br>
+      {{#power-select
+        selected=selectedRecipe
+        options=recipeOptions
+        onchange=(action (mut selectedRecipe))
+        as |name|
+      }}
+      {{name}}
+      {{/power-select}}
+    </div>
+  </div>
+  {{!-- ui three column stackable grid --}}
+
+  <div class="items">
+      {{#each (filter-by "category" filterByValue model) as |package|}}
+        {{food-item package=package onClick=(action "selectItem")}}
+      {{/each}}
+  </div>
+</div>
+
