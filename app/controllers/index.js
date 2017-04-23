@@ -36,7 +36,7 @@ export default Ember.Controller.extend({
       options: this.get('categories')
     },{
       groupName: 'recipes',
-      options: this.get('recipes')
+      options: this.get('recipes').mapBy('name')
     }];
   }),
 
