@@ -42,43 +42,57 @@
   </div>
   <div class="ui buttons">
     <div {{action (mut foodBankView) true}} class="ui button {{if foodBankView "positive"}}">
-      All
+      PB View (Overview)
     </div>
     <div class="or"></div>
     <div {{action (mut foodBankView) false}} class="ui button {{unless foodBankView "positive"}}">
-      Available
+      NGO View (Order)
     </div>
   </div>
   <div class="ui two column stackable grid">
     <div class="column">
-      <strong>Categories</strong> <br>
-      {{#power-select
+      <strong>Filter: </strong>
+      {{#power-select-multiple
         selected=filterByValue
-        options=categories
+        options=groupedOptions
         onchange=(action (mut filterByValue))
-        as |name|
+        as |item|
       }}
-        {{name}}
-      {{/power-select}}
-    </div>
-    <div class="column">
-      <strong>Recipes</strong> <br>
-      {{#power-select
-        selected=selectedRecipe
-        options=recipes
-        onchange=(action (mut selectedRecipe))
-        as |recipe|
-      }}
-        {{recipe.name}}
-      {{/power-select}}
+        {{if item.name item.name item}}
+      {{/power-select-multiple}}
     </div>
   </div>
   {{!-- ui three column stackable grid --}}
 
-  <div class="items {{if foodBankView "compact"}}">
-      {{#each (filter-by "category" filterByValue model) as |package|}}
-        {{food-item foodBankView=foodBankView package=package onClick=(action "selectItem")}}
-      {{/each}}
-  </div>
+  {{#if foodBankView}}
+      <table class="ui table striped">
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>Amount <i class="icon cubes"></i></th>
+            <th>Expires in <i class="icon hourglass half"></i></th>
+            <th>Supplier <i class="icon shopping basket"></i></th>
+            <th>Receiver <i class="icon building outline"></i></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each filteredPackages as |package|}}
+            <tr>
+              <td>{{package.status}}</td>
+              <td>{{package.weight}}</td>
+              <td>{{moment-format package.bestBefore 'MM-DD-YYYY'}}</td>
+              <td>{{package.supplier}}</td>
+              <td>{{package.receiver}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    {{else}}
+      <div class="items">
+          {{#each filteredPackages as |package|}}
+            {{food-item foodBankView=foodBankView package=package onClick=(action "selectItem")}}
+          {{/each}}
+      </div>
+  {{/if}}
 </div>
 

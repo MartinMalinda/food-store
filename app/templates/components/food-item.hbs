@@ -1,9 +1,16 @@
+{{#if (and foodBankView isUrgent)}}
+  <i class="big red icon warning" title="This item soon expires and does not have a receiver"></i>
+{{/if}}
+
 <img src={{package.img}} alt="">
 <h3>{{package.contains}} <small>{{package.category}}</small></h3>
 <div class="ui list">
   <div class="item">
     <div class="content">
-       <i class="icon cubes"></i> {{package.weight}} kg
+      <div class="ui icon input">
+        <i class="icon cubes"></i>
+        {{input type="number" step="1" value=package.weight}}
+      </div>
     </div>
   </div>
   <div class="item">

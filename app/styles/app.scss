@@ -5,7 +5,7 @@ main {
 }
 
 .ember-power-select-trigger {
-  max-width: 200px;
+  // max-width: 200px;
 }
 
 .items {
@@ -23,6 +23,11 @@ main {
       width: 100%;
       height: 150px;
       object-fit: cover;
+    }
+
+    input {
+      display: inline-block !important;
+      width: auto !important;
     }
   }
 
@@ -62,4 +67,10 @@ main {
   .transfer {
     font-size: 110%;
   }
+}
+
+.icon.warning {
+  position: absolute;
+  right: 0;
+  top: 10px;
 }

@@ -15,7 +15,8 @@ export default Ember.Route.extend({
     contains: 'Tomatoes',
     category: 'Vegetables',
     caloriesPerKg: 750,
-    img: '/tomatoes.jpeg'
+    img: '/tomatoes.jpeg',
+    status: 'available'
   },{
     weight: 30,
     bestBefore: moment().add(2, 'week'),
@@ -28,7 +29,8 @@ export default Ember.Route.extend({
     contains: 'Tomatoes',
     category: 'Vegetables',
     caloriesPerKg: 750,
-    img: '/tomatoes.jpeg'
+    img: '/tomatoes.jpeg',
+    status: 'available',
 
   },{
     weight: 100,
@@ -38,11 +40,12 @@ export default Ember.Route.extend({
     yPos: 1,
     zPos: 3,
     supplier: 'Globus',
-    receiver: 'NGO2',
+    receiver: 'Azylovy Dum Praha 5',
     category: 'Vegetables',
     caloriesPerKg: 2100,
     contains: 'Potatoes',
-    img: '/potatoes.jpg'
+    img: '/potatoes.jpg',
+    status: 'reserved',
   },{
     weight: 200,
     bestBefore: moment().add(4, 'week'),
@@ -51,11 +54,12 @@ export default Ember.Route.extend({
     yPos: 1,
     zPos: 3,
     supplier: 'Tesco',
-    receiver: 'NGO1',
+    receiver: 'Klokanek',
     contains: 'Yogurt White',
     category: 'Dairy',
     caloriesPerKg: 1300,
-    img: '/yogurt.jpg'
+    img: '/yogurt.jpg',
+    status: 'reserved',
   },{
     weight: 20,
     bestBefore: moment().add(2, 'week'),
@@ -64,11 +68,12 @@ export default Ember.Route.extend({
     yPos: 1,
     zPos: 3,
     supplier: 'Tesco',
-    receiver: 'NGO1',
+    receiver: 'Detsky Domov Blatna',
     contains: 'Eggs',
     category: 'Dairy',
     caloriesPerKg: 2800,
-    img: '/eggs.jpg'
+    img: '/eggs.jpg',
+    status: 'reserved'
   },{
     weight: 50,
     bestBefore: moment().add(4, 'week'),
@@ -77,11 +82,12 @@ export default Ember.Route.extend({
     yPos: 1,
     zPos: 3,
     supplier: 'Tesco',
-    receiver: 'NGO1',
+    receiver: 'Armada Spasy',
     contains: 'Bell Peppers',
     category: 'Vegetables',
     caloriesPerKg: 600,
-    img: '/peppers.jpg'
+    img: '/peppers.jpg',
+    status: 'reserved'
   },{
     weight: 30,
     bestBefore: moment().add(2, 'week'),
@@ -90,11 +96,12 @@ export default Ember.Route.extend({
     yPos: 1,
     zPos: 3,
     supplier: 'Tesco',
-    receiver: 'NGO1',
+    receiver: 'Detsky Domov Dolni Pocernice',
     contains: 'Bananas',
     category: 'Fruits',
     caloriesPerKg: 1400,
-    img: '/bananas.jpg'
+    img: '/bananas.jpg',
+    status: 'reserved'
   },{
     weight: 20,
     bestBefore: moment().add(2, 'week'),
@@ -103,11 +110,12 @@ export default Ember.Route.extend({
     yPos: 1,
     zPos: 3,
     supplier: 'Tesco',
-    receiver: 'NGO1',
+    receiver: 'Detsky Domov Klanovice',
     contains: 'Onions',
     category: 'Vegetables',
     caloriesPerKg: 650,
-    img: '/onions.jpg'
+    img: '/onions.jpg',
+    status: 'delivered'
   },{
     weight: 100,
     bestBefore: moment().add(2, 'week'),
@@ -116,11 +124,12 @@ export default Ember.Route.extend({
     yPos: 1,
     zPos: 3,
     supplier: 'Tesco',
-    receiver: 'NGO1',
+    receiver: 'Armada Spasy',
     contains: 'Rice',
     category: 'Vegetables',
     caloriesPerKg: 1800,
-    img: '/rice.jpg'
+    img: '/rice.jpg',
+    status: 'delivered'
   },{
     weight: 20,
     bestBefore: moment().add(2, 'week'),
@@ -129,11 +138,13 @@ export default Ember.Route.extend({
     yPos: 1,
     zPos: 3,
     supplier: 'Tesco',
-    receiver: 'NGO1',
+    receiver: 'Detsky Domov Praha 7',
     contains: 'Flour - Wheat - Fine',
     category: 'Flours',
     caloriesPerKg: 2100,
-    img: '/flour.jpg'
+    img: '/flour.jpg',
+    status: 'delivered'
+
   },{
     weight: 20,
     bestBefore: moment().add(30, 'week'),
@@ -142,11 +153,12 @@ export default Ember.Route.extend({
     yPos: 1,
     zPos: 3,
     supplier: 'Tesco',
-    receiver: 'NGO1',
+    receiver: 'Armada Spasy',
     contains: 'Sunflower Oil',
     category: 'Oils',
     caloriesPerKg: 3300,
-    img: '/oil.jpg'
+    img: '/oil.jpg',
+    status: 'delivered'
   }
   ],
 
