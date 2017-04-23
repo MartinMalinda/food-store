@@ -1,0 +1,13 @@
+<div class="ui two column stackable grid">
+  <div class="column">
+    <strong>Filter: </strong>
+    {{#power-select-multiple
+      selected=selected
+      options=groupedOptions
+      onchange=onchange
+      as |item|
+    }}
+      {{if item.name item.name item}}
+    {{/power-select-multiple}}
+  </div>
+</div>

@@ -1,7 +1,7 @@
 @import "ember-power-select";
 
 main {
-  padding-top: 50px;
+  padding-top: 100px;
 }
 
 .ember-power-select-trigger {
@@ -73,4 +73,8 @@ main {
   position: absolute;
   right: 0;
   top: 10px;
+}
+
+.ct-square {
+  height: 530px;
 }

@@ -1,6 +1,7 @@
 {
   "name": "food-store",
   "dependencies": {
-    "semantic-ui": "^2.2.10"
+    "semantic-ui": "^2.2.10",
+    "chartist": "~0.9.8"
   }
 }

@@ -11,17 +11,7 @@ const sumBy = function(prop){
 }
 
 export default Ember.Controller.extend({
-  categories: ['', 'Vegetables', 'Dairy', 'Meat', 'Fruits', 'Oils', 'Flours'],
-  recipes: [{
-    name: 'Goulash',
-    ingredients: ['Onions', 'Flour - Wheat - Fine', 'Meat - Beef']
-  },{
-    name: 'Leco',
-    ingredients: ['Eggs', 'Sunflower Oil', 'Tomatoes', 'Bell Peppers']
-  },{
-    name: 'Chinese',
-    ingredients: ['Meat - Beef', 'Rice', 'Bell Peppers']
-  }],
+
   selectedItems: [],
 
   selectedWeight: sumBy('weight'),
@@ -30,15 +20,7 @@ export default Ember.Controller.extend({
 
   foodBankView: false,
 
-  groupedOptions: computed(function(){
-    return [{
-      groupName: 'categories',
-      options: this.get('categories')
-    },{
-      groupName: 'recipes',
-      options: this.get('recipes').mapBy('name')
-    }];
-  }),
+
 
   filteredPackages: computed('model.@each.category', 'filterByValue.[]', function(){
     // return this.get('model').filter(package => {

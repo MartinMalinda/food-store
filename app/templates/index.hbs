@@ -1,6 +1,5 @@
 {{outlet}}
 
-
 <div class="ui container">
   <div class="ui segment {{unless selectedItems.legth "hidden"}}">
     <div class="ui two column stackable grid">
@@ -40,58 +39,13 @@
       </div>       
     </div>
   </div>
-  <div class="ui buttons">
-    <div {{action (mut foodBankView) true}} class="ui button {{if foodBankView "positive"}}">
-      PB View (Overview)
-    </div>
-    <div {{action (mut foodBankView) false}} class="ui button {{unless foodBankView "positive"}}">
-      NGO View (Order)
-    </div>
-  </div>
-  <div class="ui two column stackable grid">
-    <div class="column">
-      <strong>Filter: </strong>
-      {{#power-select-multiple
-        selected=filterByValue
-        options=groupedOptions
-        onchange=(action (mut filterByValue))
-        as |item|
-      }}
-        {{if item.name item.name item}}
-      {{/power-select-multiple}}
-    </div>
-  </div>
+  {{package-filtering selected=filterByValue onchange=(action (mut filterByValue))}}
   {{!-- ui three column stackable grid --}}
 
-  {{#if foodBankView}}
-      <table class="ui table striped">
-        <thead>
-          <tr>
-            <th>Status</th>
-            <th>Amount <i class="icon cubes"></i></th>
-            <th>Expires in <i class="icon hourglass half"></i></th>
-            <th>Supplier <i class="icon shopping basket"></i></th>
-            <th>Receiver <i class="icon building outline"></i></th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each filteredPackages as |package|}}
-            <tr>
-              <td>{{package.status}}</td>
-              <td>{{package.weight}}</td>
-              <td>{{moment-format package.bestBefore 'MM-DD-YYYY'}}</td>
-              <td>{{package.supplier}}</td>
-              <td>{{package.receiver}}</td>
-            </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    {{else}}
-      <div class="items">
-          {{#each filteredPackages as |package|}}
-            {{food-item foodBankView=foodBankView package=package onClick=(action "selectItem")}}
-          {{/each}}
-      </div>
-  {{/if}}
+  <div class="items">
+    {{#each filteredPackages as |  package|}}
+      {{food-item foodBankView=foodBankView package=package onClick=(action "selectItem")}}
+    {{/each}}
+  </div>
 </div>
 

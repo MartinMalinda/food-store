@@ -1,0 +1,32 @@
+<img style="width: 250px;" src="/tesco.svg" alt="" class="ui image">
+<div style="margin-top: 20px" class="ui">
+  <div class="ui stackable grid">
+    <div class="six wide column">
+      <h2>Latest exports</h2>
+      <div class="ui list">
+      </div>
+      <table class="ui table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Food</th>
+            <th>Amount [kg]</th>
+          </tr>
+        </thead>
+        <tbody>
+        {{#each model as |package|}}
+          <tr>
+            <td>{{moment-format package.bestBefore "DD. MM. YYYY"}}</td>
+            <td>{{package.contains}}</td>
+            <td>{{package.weight}}</td>
+          </tr>
+        {{/each}}            
+        </tbody>
+      </table>
+    </div>
+    <div class="ten wide column">
+      <h2>Tonnes of exported food in 2017</h2>
+      {{chartist-chart data=series}}
+    </div>
+  </div>
+</div>

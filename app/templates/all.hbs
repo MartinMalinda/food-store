@@ -1,0 +1,24 @@
+{{package-filtering selected=filterByValue onchange=(action (mut filterByValue))}}
+
+<table class="ui table striped">
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>Amount <i class="icon cubes"></i></th>
+        <th>Expires in <i class="icon hourglass half"></i></th>
+        <th>Supplier <i class="icon shopping basket"></i></th>
+        <th>Receiver <i class="icon building outline"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each filteredPackages as |package|}}
+        <tr>
+          <td>{{package.status}}</td>
+          <td>{{package.weight}}</td>
+          <td>{{moment-format package.bestBefore 'MM-DD-YYYY'}}</td>
+          <td>{{package.supplier}}</td>
+          <td>{{package.receiver}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>

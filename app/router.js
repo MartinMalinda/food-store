@@ -7,6 +7,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('stores');
+  this.route('all');
+  this.route('available');
 });
 
 export default Router;
