@@ -78,3 +78,18 @@ main {
 .ct-square {
   height: 530px;
 }
+
+.ui.divider {
+  margin: 50px;
+}
+
+.logos {
+  text-align: center;
+  // display: flex;
+
+  img, svg {
+    vertical-align: middle;
+    max-width: 100px;
+    margin: 10px;
+  }
+}
