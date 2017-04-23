@@ -28,6 +28,8 @@ export default Ember.Controller.extend({
   selectedCalories: sumBy('totalCalories'),
   selectedPortions: sumBy('portions'),
 
+  foodBankView: false,
+
   actions: {
     selectItem(item){
       const items = this.get('selectedItems');

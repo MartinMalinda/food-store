@@ -40,6 +40,15 @@
       </div>       
     </div>
   </div>
+  <div class="ui buttons">
+    <div {{action (mut foodBankView) true}} class="ui button {{if foodBankView "positive"}}">
+      All
+    </div>
+    <div class="or"></div>
+    <div {{action (mut foodBankView) false}} class="ui button {{unless foodBankView "positive"}}">
+      Available
+    </div>
+  </div>
   <div class="ui two column stackable grid">
     <div class="column">
       <strong>Categories</strong> <br>
@@ -60,15 +69,15 @@
         onchange=(action (mut selectedRecipe))
         as |recipe|
       }}
-      {{recipe.name}}
+        {{recipe.name}}
       {{/power-select}}
     </div>
   </div>
   {{!-- ui three column stackable grid --}}
 
-  <div class="items">
+  <div class="items {{if foodBankView "compact"}}">
       {{#each (filter-by "category" filterByValue model) as |package|}}
-        {{food-item package=package onClick=(action "selectItem")}}
+        {{food-item foodBankView=foodBankView package=package onClick=(action "selectItem")}}
       {{/each}}
   </div>
 </div>

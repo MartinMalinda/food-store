@@ -3,12 +3,24 @@
 <div class="ui list">
   <div class="item">
     <div class="content">
-      {{package.weight}} kg
+       <i class="icon cubes"></i> {{package.weight}} kg
     </div>
   </div>
   <div class="item">
     <div class="content">
-      Use {{moment-from-now package.bestBefore}}
+       <i class="icon hourglass half"></i> Use {{moment-from-now package.bestBefore}}
     </div>
   </div>
+  {{#if foodBankView}}
+    <div class="item transfer">
+      <div class="content">
+        <i class="icon shopping basket"></i>
+        {{package.supplier}}
+        {{#if package.receiver}}
+          <i class="icon long arrow right"></i>
+           <i class="icon building outline"></i> {{package.receiver}}
+        {{/if}}
+      </div>
+    </div>
+  {{/if}}
 </div>

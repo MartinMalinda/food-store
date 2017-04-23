@@ -9,7 +9,6 @@ main {
 }
 
 .items {
-    
   display: flex;
   margin-top: 20px;
   flex-wrap: wrap;
@@ -18,6 +17,7 @@ main {
     flex-basis: 250px;
     margin: 5px !important;
     cursor: pointer;
+    font-size: 110%;
 
     img {
       width: 100%;
@@ -30,5 +30,36 @@ main {
     font-size: 70%;
     display: inline-block;
     margin-left: 5px;
+  }
+
+  &.compact {
+    display: block;
+
+    .food-item {
+      // padding: 0;
+
+      h3 {
+        margin: 0;
+        margin-bottom: 10px;
+      }
+
+      .ui.list {
+        margin: 2px;
+      }
+    }
+
+    img {
+      display: none;
+    }
+  }
+}
+
+.ui.buttons {
+  margin: 20px 0;
+}
+
+.food-item {
+  .transfer {
+    font-size: 110%;
   }
 }
