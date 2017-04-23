@@ -3,20 +3,6 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   fixtures: [
   {
-    weight: 20,
-    bestBefore: moment().add(1, 'week'),
-    size: 5,
-    xPos: 2,
-    yPos: 1,
-    zPos: 3,
-    supplier: 'Tesco',
-    receiver: '',
-    contains: 'Tomatoes',
-    category: 'Vegetables',
-    caloriesPerKg: 750,
-    img: '/tomatoes.jpeg',
-    status: 'available'
-  },{
     weight: 30,
     bestBefore: moment().add(2, 'week'),
     size: 5,
